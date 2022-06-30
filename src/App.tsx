@@ -1,12 +1,9 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {Navigation} from './navigation/Navigation';
 
 const App = () => {
-  return (
-    <View>
-      <Text>Hello</Text>
-    </View>
-  );
+  return <Navigation />;
 };
 
 const styles = StyleSheet.create({});

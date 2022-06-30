@@ -3,7 +3,7 @@ package com.ecapp;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-
+import android.os.Bundle;
 public class MainActivity extends ReactActivity {
 
   /**
@@ -14,6 +14,11 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "EcApp";
   }
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+     super.onCreate(null);
+}
 
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
