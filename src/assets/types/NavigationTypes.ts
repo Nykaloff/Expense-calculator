@@ -1,3 +1,5 @@
 export type RootStackParams = {
-    Home: {text:String}
+    ClientsScreen: {text:String}
+    CoastScreen: {text:String}
+    TotalScreen: {text:String}
 }
