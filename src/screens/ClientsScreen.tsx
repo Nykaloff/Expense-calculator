@@ -1,17 +1,21 @@
 import React from 'react';
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
-import {useAppSelector} from '../hooks/redux';
+import {Button, StyleSheet, View} from 'react-native';
+import {useAppSelector, useAppDispatch} from '../hooks/redux';
+import {clientsAction} from '../redux/reducers/clientsSlice';
 
-export const ClientsScreen = () => {
+export const ClientsScreen = ({navigation}: any) => {
   const {clients} = useAppSelector(state => state.clientsReducer);
+  const dispatch = useAppDispatch();
+
+  const newClient = {id: 1231, name: 'Dasha', telephone: '77808668'};
+  console.log(clients);
   return (
     <View style={styles.container}>
-      <View>
-        <Text>{clients[0].name}</Text>
-        <Text>{clients[0].telephone}</Text>
-      </View>
-      <Text>{clients[1].name}</Text>
-      <Text>{clients[1].telephone}</Text>
+      <Button
+        onPress={() => {
+          navigation.navigate('AddNewClientScreen');
+        }}
+        title="Добавить клиента"></Button>
     </View>
   );
 };

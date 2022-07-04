@@ -7,11 +7,15 @@ import {Provider} from 'react-redux';
 
 import {PersistGate} from 'redux-persist/integration/react';
 
+import {Provider as PaperProvider} from 'react-native-paper';
+
 const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Navigation />
+        <PaperProvider>
+          <Navigation />
+        </PaperProvider>
       </PersistGate>
     </Provider>
   );
