@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { ICleints}  from '../../assets/types/ClientsTypes'
+import { ICleint}  from '../../assets/types/ClientsTypes'
 interface ICleintsState {
-    clients: ICleints[];
+    clients: ICleint[];
 }
 
 const initialState: ICleintsState = {

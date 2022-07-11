@@ -1,13 +1,28 @@
 import * as React from 'react';
-import {View} from 'react-native';
+import {View, Button} from 'react-native';
 import {TextInput} from 'react-native-paper';
 
-export const AddNewClientScreen = () => {
+import {useAppDispatch} from '../hooks/redux';
+import {clientsAction} from '../redux/reducers/clientsSlice';
+
+export const AddNewClientScreen = ({navigation: {goBack}}: any) => {
+  const dispatch = useAppDispatch();
+
+  function getRandomInt(max: any) {
+    return Math.floor(Math.random() * max);
+  }
+
   const [name, setName] = React.useState('');
-  const onChangeName = name => setName(name);
+  const onChangeName = (name: any) => setName(name);
 
   const [telephone, setTelephone] = React.useState('');
-  const onChangeTelephone = telephone => setTelephone(telephone);
+  const onChangeTelephone = (telephone: any) => setTelephone(telephone);
+
+  const newClient = {
+    id: getRandomInt(999999999999),
+    name: name,
+    telephone: telephone,
+  };
 
   return (
     <View>
@@ -21,6 +36,13 @@ export const AddNewClientScreen = () => {
         value={telephone}
         onChangeText={onChangeTelephone}
       />
+      <Button
+        title="Добавить"
+        onPress={() => {
+          dispatch(clientsAction.addClient(newClient)), goBack();
+        }}
+      />
+      <Button title="Отменить" onPress={() => goBack()} />
     </View>
   );
 };

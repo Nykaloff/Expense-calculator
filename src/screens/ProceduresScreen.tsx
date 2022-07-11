@@ -8,24 +8,19 @@ import {
   ImageBackground,
 } from 'react-native';
 import {useAppSelector, useAppDispatch} from '../hooks/redux';
-import {ICleint} from '../assets/types/ClientsTypes';
 import {ListRenderItem} from 'react-native';
 
-export const ClientsScreen = ({navigation}: any) => {
-  const {clients} = useAppSelector(state => state.clientsReducer);
+export const ProceduresScreen = ({navigation}: any) => {
   const dispatch = useAppDispatch();
+  const {procedures} = useAppSelector(state => state.proceduresReducer);
 
   const backgroundImage = require('../assets/images/background.jpeg');
 
-  const renderItem: ListRenderItem<ICleint> = ({item}: {item: ICleint}) => {
+  const renderItem: ListRenderItem<void> = ({item}: {item: any}) => {
     return (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('ProfileClientScreen', {
-            id: item.id,
-            name: item.name,
-            telephone: item.telephone,
-          });
+          navigation.navigate('');
         }}>
         <View style={styles.client}>
           <Text style={styles.clientName}>
@@ -47,17 +42,17 @@ export const ClientsScreen = ({navigation}: any) => {
         style={styles.backgroundImage}>
         <View style={styles.clientsClonatainer}>
           <FlatList
-            data={clients}
-            keyExtractor={(item: ICleint) => item.id}
+            data={procedures}
+            keyExtractor={item => item.id}
             renderItem={renderItem}
           />
         </View>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('AddNewClientScreen');
+            navigation.navigate('');
           }}>
           <View style={styles.addNewClient}>
-            <Text style={styles.addNewClientText}>Добавить клиента</Text>
+            <Text style={styles.addNewClientText}>Добавить запись</Text>
           </View>
         </TouchableOpacity>
       </ImageBackground>
