@@ -20,17 +20,8 @@ export const ProceduresScreen = ({navigation}: any) => {
     return (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('');
-        }}>
-        <View style={styles.client}>
-          <Text style={styles.clientName}>
-            Имя: <Text style={styles.clientNameI}>{item.name}</Text>
-          </Text>
-          <Text style={styles.clientTel}>
-            Телефон: <Text style={styles.clientTelI}>{item.telephone}</Text>
-          </Text>
-        </View>
-      </TouchableOpacity>
+          navigation.navigate('AddNewProcedureScreen');
+        }}></TouchableOpacity>
     );
   };
 
@@ -49,7 +40,7 @@ export const ProceduresScreen = ({navigation}: any) => {
         </View>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('');
+            navigation.navigate('AddNewProcedureScreen');
           }}>
           <View style={styles.addNewClient}>
             <Text style={styles.addNewClientText}>Добавить запись</Text>

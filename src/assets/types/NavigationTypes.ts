@@ -6,6 +6,7 @@ export type RootStackParams = {
     AddNewClientScreen: {text:String}
     ProfileClientScreen: {id:String, name:String, Telephone:String}
     ProceduresScreen: {text:String}
+    AddNewProcedureScreen: {text:String}
 }
 
 export type PropsClientsScreen = StackScreenProps<RootStackParams, 'ClientsScreen'>;
