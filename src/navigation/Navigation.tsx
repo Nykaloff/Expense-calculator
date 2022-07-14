@@ -77,7 +77,7 @@ export const Navigation = () => {
             tabBarIcon: ({focused}) => (
               <View>
                 <Image
-                  source={require('../assets/icons/coasts.png')}
+                  source={require('../assets/icons/procedures.png')}
                   resizeMode="contain"
                   style={{
                     width: 25,
