@@ -1,5 +1,5 @@
-export interface ICleints {
-    id: number;
+export interface ICleint {
+    id: string;
     name: string;
-    telephone: string;
+    telephone: string | null;
 }

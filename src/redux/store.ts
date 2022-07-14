@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import clientsReducer from '../redux/reducers/clientsSlice'
+import proceduresReducer from './reducers/proceduresSlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistReducer,
   persistStore,
@@ -13,6 +14,7 @@ import { persistReducer,
 
 const RootReducer = combineReducers({
     clientsReducer,
+    proceduresReducer,
 })
 
 const persistConfig = {
@@ -25,12 +27,13 @@ const persistedReducer = persistReducer(persistConfig, RootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
+  middleware: (getDefaultMiddleware,) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+    
 })
 
 export const persistor = persistStore(store);

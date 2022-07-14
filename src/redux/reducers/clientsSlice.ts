@@ -1,20 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ICleints}  from '../../assets/types/ClientsTypes'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import { ICleint}  from '../../assets/types/ClientsTypes'
 interface ICleintsState {
-    clients: ICleints[];
+    clients: ICleint[];
 }
 
 const initialState: ICleintsState = {
-    clients: [{id: 1231, name:'Karina', telephone:'77808668'},
-    {id: 1231, name:'Dasha', telephone:'77808668'}]
-}
+    clients: []
+};
+
+const newClient = {id:123, name: 'Karina1', telephone: '77878848'}
+
 
 export const clientsSlice = createSlice({
     name: 'Clients',
     initialState,
     reducers: {
-
+        addClient: (state, actions) => {state.clients.push(actions.payload)},
+        removeClient: () => {}
     }
 })
+
+export const clientsAction = clientsSlice.actions
 
 export default clientsSlice.reducer;
