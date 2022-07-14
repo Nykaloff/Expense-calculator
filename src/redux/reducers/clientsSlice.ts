@@ -5,7 +5,8 @@ interface ICleintsState {
 }
 
 const initialState: ICleintsState = {
-    clients: [{id: 1231, name:'Karina', telephone:'77808668'}]
+    clients: [{id: 1231, name:'Karina', telephone:'77808668'},
+    {id: 1231, name:'Dasha', telephone:'77808668'}]
 }
 
 export const clientsSlice = createSlice({
