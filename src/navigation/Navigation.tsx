@@ -19,7 +19,7 @@ const RootTab = createBottomTabNavigator<RootStackParams>();
 export const ClientsScreenStackNavigator = () => {
   return (
     <RootStack.Navigator>
-      <RootStack.Screen name="ClientsScreen" component={ClientsScreen} />
+      <RootStack.Screen name="ClientsScreenStack" component={ClientsScreen} />
       <RootStack.Screen
         name="AddNewClientScreen"
         component={AddNewClientScreen}
@@ -35,7 +35,10 @@ export const ClientsScreenStackNavigator = () => {
 export const ProceduresScreenStackNavigator = () => {
   return (
     <RootStack.Navigator>
-      <RootStack.Screen name="ProceduresScreen" component={ProceduresScreen} />
+      <RootStack.Screen
+        name="ProceduresScreenStack"
+        component={ProceduresScreen}
+      />
       <RootStack.Screen
         name="AddNewProcedureScreen"
         component={AddNewProcedureScreen}

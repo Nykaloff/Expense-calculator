@@ -1,56 +1,58 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {View, Button, Text} from 'react-native';
 import DatePicker from 'react-native-date-picker';
+import {TextInput} from 'react-native-paper';
+
+import {INewProcedure} from '../assets/types/NewProcedure';
 
 export const AddNewProcedureScreen = ({navigation: {goBack}}: any) => {
-  const DatePickerModal = () => {
-    const [date, setDate] = useState(new Date());
-    const [open, setOpen] = useState(false);
-    console.log(typeof date);
-    console.log(Object.values(date));
-    console.log(date);
-    console.log(Date());
+  const [date, setDate] = useState(new Date());
+  const [open, setOpen] = useState(false);
 
-    const datePick = date.toString();
+  const [nameProcedure, setNameProcedure] = useState('');
+  const onChangenNameProcedure = (nameProcedure: any) =>
+    setNameProcedure(nameProcedure);
 
-    return (
-      <View>
-        <View>
-          <Button title="Выбрать дату" onPress={() => setOpen(true)} />
-        </View>
-        <DatePicker
-          theme="light"
-          androidVariant="iosClone"
-          mode="date"
-          locale="ru"
-          modal
-          open={open}
-          date={date}
-          onConfirm={date => {
-            setOpen(false);
-            setDate(date);
-          }}
-          onCancel={() => {
-            setOpen(false);
-          }}
-        />
-        <Text>Дата: {datePick}</Text>
-      </View>
-    );
+  const datePick = date.toString();
+
+  const newProcedure: INewProcedure = {
+    date: datePick,
+    nameProcedure: nameProcedure,
+    client: {id: null, name: '', telephone: ''},
   };
 
   return (
     <View>
       <View>
-        <Text>Имя выбранного клиента</Text>
-        <Text>Дата </Text>
+        <Text>{datePick}</Text>
+        <Text>{nameProcedure}</Text>
       </View>
       <View>
-        <Text>Выбери клиента</Text>
+        <Button title="Выбрать дату" onPress={() => setOpen(true)} />
       </View>
       <View>
-        <DatePickerModal />
+        <TextInput
+          label="Введите название процедур через запятую"
+          value={nameProcedure}
+          onChangeText={onChangenNameProcedure}
+        />
       </View>
+      <DatePicker
+        theme="light"
+        androidVariant="iosClone"
+        mode="date"
+        locale="ru"
+        modal
+        open={open}
+        date={date}
+        onConfirm={date => {
+          setOpen(false);
+          setDate(date);
+        }}
+        onCancel={() => {
+          setOpen(false);
+        }}
+      />
     </View>
   );
 };
