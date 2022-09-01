@@ -18,7 +18,7 @@ export const ClientsScreen = ({navigation}: ClientsScreenProp) => {
 
   const backgroundImage = require('../assets/images/background.jpeg');
 
-  const renderItem: ListRenderItem<ICleint> = ({item}: {item: ICleint}) => {
+  const renderItem: ListRenderItem<ICleint> = ({item}) => {
     return (
       <TouchableOpacity
         onPress={() => {
