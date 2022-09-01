@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {TotalScreenProp} from '../assets/types/NavigationTypes';
 
-export const TotalScreen = () => {
+export const TotalScreen = ({navigation}: TotalScreenProp) => {
   return (
     <View style={styles.container}>
       <Text>Итог</Text>

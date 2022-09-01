@@ -9,8 +9,9 @@ import {
 } from 'react-native';
 import {useAppSelector, useAppDispatch} from '../hooks/redux';
 import {ListRenderItem} from 'react-native';
+import {ProceduresScreenProp} from '../assets/types/NavigationTypes';
 
-export const ProceduresScreen = ({navigation}: any) => {
+export const ProceduresScreen = ({navigation}: ProceduresScreenProp) => {
   const dispatch = useAppDispatch();
   const {procedures} = useAppSelector(state => state.proceduresReducer);
 

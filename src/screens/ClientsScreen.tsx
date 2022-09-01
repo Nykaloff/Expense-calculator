@@ -10,8 +10,9 @@ import {
 import {useAppSelector, useAppDispatch} from '../hooks/redux';
 import {ICleint} from '../assets/types/ClientsTypes';
 import {ListRenderItem} from 'react-native';
+import {ClientsScreenProp} from '../assets/types/NavigationTypes';
 
-export const ClientsScreen = ({navigation}: any) => {
+export const ClientsScreen = ({navigation}: ClientsScreenProp) => {
   const {clients} = useAppSelector(state => state.clientsReducer);
   const dispatch = useAppDispatch();
 
@@ -22,9 +23,7 @@ export const ClientsScreen = ({navigation}: any) => {
       <TouchableOpacity
         onPress={() => {
           navigation.navigate('ProfileClientScreen', {
-            id: item.id,
-            name: item.name,
-            telephone: item.telephone,
+            client: item,
           });
         }}>
         <View style={styles.client}>

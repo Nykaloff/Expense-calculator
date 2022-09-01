@@ -1,15 +1,18 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import {ICleint} from '../assets/types/ClientsTypes';
+import {ProfileClientScreenProp} from '../assets/types/NavigationTypes';
 
-export const ProfileClientScreen: React.FC = ({route, navigation}: any) => {
-  const {clientID, name, telephone} = route.params;
+export const ProfileClientScreen = ({
+  route,
+  navigation,
+}: ProfileClientScreenProp) => {
+  const {client} = route.params;
 
   return (
     <View style={styles.container}>
       <View style={styles.profile}>
-        <Text style={styles.clientName}>{name}</Text>
-        <Text style={styles.clientTel}>{telephone}</Text>
+        <Text style={styles.clientName}>{client.name}</Text>
+        <Text style={styles.clientTel}>{client.telephone}</Text>
         <Text style={styles.clientTel}>______________________</Text>
       </View>
     </View>

@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {CoastScreenProp} from '../assets/types/NavigationTypes';
 
-export const CoastScreen = () => {
+export const CoastScreen = ({navigation}: CoastScreenProp) => {
   return (
     <View style={styles.container}>
       <Text>Расходы</Text>

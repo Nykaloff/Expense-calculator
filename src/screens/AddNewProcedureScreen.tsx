@@ -2,10 +2,13 @@ import React, {useState} from 'react';
 import {View, Button, Text} from 'react-native';
 import DatePicker from 'react-native-date-picker';
 import {TextInput} from 'react-native-paper';
+import {AddNewProcedureScreenProp} from '../assets/types/NavigationTypes';
 
 import {INewProcedure} from '../assets/types/NewProcedure';
 
-export const AddNewProcedureScreen = ({navigation: {goBack}}: any) => {
+export const AddNewProcedureScreen = ({
+  navigation: {goBack},
+}: AddNewProcedureScreenProp) => {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
 

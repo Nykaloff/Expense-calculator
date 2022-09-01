@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Image, useColorScheme, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {RootStackParams} from '../assets/types/NavigationTypes';
+import {RootTabParams, RootStackParams} from '../assets/types/NavigationTypes';
 
 import {ClientsScreen} from '../screens/ClientsScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -14,7 +14,7 @@ import {ProceduresScreen} from '../screens/ProceduresScreen';
 import {AddNewProcedureScreen} from '../screens/AddNewProcedureScreen';
 
 const RootStack = createNativeStackNavigator<RootStackParams>();
-const RootTab = createBottomTabNavigator<RootStackParams>();
+const RootTab = createBottomTabNavigator<RootTabParams>();
 
 export const ClientsScreenStackNavigator = () => {
   return (
@@ -23,6 +23,7 @@ export const ClientsScreenStackNavigator = () => {
       <RootStack.Screen
         name="AddNewClientScreen"
         component={AddNewClientScreen}
+        options={{headerShown: false}}
       />
       <RootStack.Screen
         name="ProfileClientScreen"
