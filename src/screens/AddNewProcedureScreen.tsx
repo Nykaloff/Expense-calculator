@@ -12,8 +12,8 @@ export const AddNewProcedureScreen = ({
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
 
-  const [nameProcedure, setNameProcedure] = useState('');
-  const onChangenNameProcedure = (nameProcedure: any) =>
+  const [nameProcedure, setNameProcedure] = useState<string>('');
+  const onChangenNameProcedure = (nameProcedure: string) =>
     setNameProcedure(nameProcedure);
 
   const datePick = date.toString();

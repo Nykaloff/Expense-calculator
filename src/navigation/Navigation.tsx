@@ -23,7 +23,6 @@ export const ClientsScreenStackNavigator = () => {
       <RootStack.Screen
         name="AddNewClientScreen"
         component={AddNewClientScreen}
-        options={{headerShown: false}}
       />
       <RootStack.Screen
         name="ProfileClientScreen"
