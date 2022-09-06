@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import clientsReducer from '../redux/reducers/clientsSlice'
 import proceduresReducer from './reducers/proceduresSlice';
+import namesProceuresReducer from './reducers/namesProceduresSlice'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistReducer,
   persistStore,
@@ -15,6 +16,7 @@ import { persistReducer,
 const RootReducer = combineReducers({
     clientsReducer,
     proceduresReducer,
+    namesProceuresReducer,
 })
 
 const persistConfig = {

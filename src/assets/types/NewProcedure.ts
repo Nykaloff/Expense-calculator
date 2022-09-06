@@ -1,9 +1,6 @@
+import { ICleint } from "./ClientsTypes";
 export interface INewProcedure {
-    date: string;
+    date: string | null;
     nameProcedure: string;
-    client: {
-        id: number | null;
-        name: string;
-        telephone: string | null;
-    };
+    client: ICleint
 }

@@ -5,6 +5,8 @@ import {TextInput} from 'react-native-paper';
 import {AddNewProcedureScreenProp} from '../assets/types/NavigationTypes';
 
 import {INewProcedure} from '../assets/types/NewProcedure';
+import {useAppDispatch} from '../hooks/redux';
+import {proceduresAction} from '../redux/reducers/proceduresSlice';
 
 export const AddNewProcedureScreen = ({
   navigation: {goBack},
@@ -18,10 +20,12 @@ export const AddNewProcedureScreen = ({
 
   const datePick = date.toString();
 
+  const dispatch = useAppDispatch();
+
   const newProcedure: INewProcedure = {
     date: datePick,
     nameProcedure: nameProcedure,
-    client: {id: null, name: '', telephone: ''},
+    client: {id: '', name: '', telephone: ''},
   };
 
   return (
@@ -56,6 +60,13 @@ export const AddNewProcedureScreen = ({
           setOpen(false);
         }}
       />
+      <Button
+        title="Добавить"
+        onPress={() => {
+          dispatch(proceduresAction.addProcedure(newProcedure)), goBack();
+        }}
+      />
+      <Button title="Отменить" onPress={() => goBack()} />
     </View>
   );
 };

@@ -17,7 +17,8 @@ export const ProceduresScreen = ({navigation}: ProceduresScreenProp) => {
 
   const backgroundImage = require('../assets/images/background.jpeg');
 
-  const renderItem: ListRenderItem<void> = ({item}: {item: any}) => {
+  // !change type for renderItem and item !!!
+  const renderItem: ListRenderItem<any> = ({item}: {item: any}) => {
     return (
       <TouchableOpacity
         onPress={() => {
