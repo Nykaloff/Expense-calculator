@@ -13,10 +13,10 @@ export type RootStackParams = {
 }
 
 export type RootTabParams = {
-    ClientsScreen: undefined
-    ProceduresScreen: undefined
-    CoastScreen: undefined
-    TotalScreen: undefined
+    Клиенты: undefined
+    Процедуры: undefined
+    Расходы: undefined
+    Итог: undefined
 }
 
 export type AddNewClientScreenProp = NativeStackScreenProps<RootStackParams, 'AddNewClientScreen'>;
@@ -27,18 +27,18 @@ export type ProceduresScreenStack = NativeStackScreenProps<RootStackParams, 'Pro
 
 
 export type ClientsScreenProp = CompositeScreenProps<
-  BottomTabScreenProps<RootTabParams, 'ClientsScreen'>,
+  BottomTabScreenProps<RootTabParams, 'Клиенты'>,
   StackScreenProps<RootStackParams>
 >;
 export type ProceduresScreenProp = CompositeScreenProps<
-  BottomTabScreenProps<RootTabParams, 'ProceduresScreen'>,
+  BottomTabScreenProps<RootTabParams, 'Процедуры'>,
   StackScreenProps<RootStackParams>
 >;
 export type CoastScreenProp = CompositeScreenProps<
-  BottomTabScreenProps<RootTabParams, 'CoastScreen'>,
+  BottomTabScreenProps<RootTabParams, 'Расходы'>,
   StackScreenProps<RootStackParams>
 >;
 export type TotalScreenProp = CompositeScreenProps<
-  BottomTabScreenProps<RootTabParams, 'TotalScreen'>,
+  BottomTabScreenProps<RootTabParams, 'Итог'>,
   StackScreenProps<RootStackParams>
 >;

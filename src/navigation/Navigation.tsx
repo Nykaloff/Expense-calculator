@@ -19,12 +19,19 @@ const RootTab = createBottomTabNavigator<RootTabParams>();
 export const ClientsScreenStackNavigator = () => {
   return (
     <RootStack.Navigator>
-      <RootStack.Screen name="ClientsScreenStack" component={ClientsScreen} />
+      <RootStack.Screen 
+      options={{
+        headerShown: false }}
+        name="ClientsScreenStack" component={ClientsScreen} />
       <RootStack.Screen
+      options={{
+        headerShown: false }}
         name="AddNewClientScreen"
         component={AddNewClientScreen}
       />
       <RootStack.Screen
+      options={{
+        headerShown: false }}
         name="ProfileClientScreen"
         component={ProfileClientScreen}
       />
@@ -36,10 +43,14 @@ export const ProceduresScreenStackNavigator = () => {
   return (
     <RootStack.Navigator>
       <RootStack.Screen
+      options={{
+        headerShown: false }}
         name="ProceduresScreenStack"
         component={ProceduresScreen}
       />
       <RootStack.Screen
+      options={{
+        headerShown: false }}
         name="AddNewProcedureScreen"
         component={AddNewProcedureScreen}
       />
@@ -53,7 +64,7 @@ export const Navigation = () => {
     <NavigationContainer>
       <RootTab.Navigator>
         <RootTab.Screen
-          name="ClientsScreen"
+          name="Клиенты"
           component={ClientsScreenStackNavigator}
           options={{
             headerShown: false,
@@ -73,7 +84,7 @@ export const Navigation = () => {
           }}
         />
         <RootTab.Screen
-          name="ProceduresScreen"
+          name="Процедуры"
           component={ProceduresScreenStackNavigator}
           options={{
             headerShown: false,
@@ -93,7 +104,7 @@ export const Navigation = () => {
           }}
         />
         <RootTab.Screen
-          name="CoastScreen"
+          name="Расходы"
           component={CoastScreen}
           options={{
             tabBarIcon: ({focused}) => (
@@ -112,7 +123,7 @@ export const Navigation = () => {
           }}
         />
         <RootTab.Screen
-          name="TotalScreen"
+          name="Итог"
           component={TotalScreen}
           options={{
             tabBarIcon: ({focused}) => (

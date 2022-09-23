@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   clientsClonatainer: {
+    paddingTop: 40,
     flex: 1,
   },
   client: {
